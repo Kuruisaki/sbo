@@ -1,0 +1,22 @@
+name: sbo-xfoil
+
+channels:
+    - conda-forge
+
+dependencies:
+    - python=3.11
+    - numpy=1.26.4
+    - scipy=1.14.1
+    # Explicit runtime variant: MKL 2026 failed the local Cholesky/GP probe.
+    - libblas=*=*openblas
+    - libcblas=*=*openblas
+    - liblapack=*=*openblas
+    - scikit-learn=1.5.2
+    - pandas=2.2.3
+    - matplotlib=3.9.2
+    - pyyaml=6.0.2
+    - joblib=1.4.2
+    - psutil=6.0.0
+    - pytest=8.3.3
+    - setuptools=75.1.0
+    - pip=24.2

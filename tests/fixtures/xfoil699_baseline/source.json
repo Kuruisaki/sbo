@@ -1,0 +1,61 @@
+{
+  "purpose": "Successful real XFOIL 6.99 session fixture for runner/parser regression; not full SBO validation.",
+  "captured_at_utc": "2026-10-13T12:11:51.739358+00:00",
+  "solver_source_url": "https://web.mit.edu/drela/Public/web/xfoil/XFOIL6.99.zip",
+  "executable_sha256": "c17342f84ae260c2b11a74cd0e2fb8189a5f8954c6bb7a8467a0f27055c7faea",
+  "geometry_file_sha256": "bb52d98ca138e79a8ab3830d09f9c804c29d237218a4c102a034b91a4c7083d4",
+  "flow": {
+    "reynolds": 1000000.0,
+    "mach": 0.1,
+    "target_cl": 0.5,
+    "type": 1,
+    "ncrit": 9.0,
+    "xtr": [
+      1.0,
+      1.0
+    ],
+    "cl_tolerance": 0.001,
+    "viscous": true
+  },
+  "panel_count": 160,
+  "settings": {
+    "expected_version": "6.99",
+    "evaluation_policy_version": "xfoil-cl-v1",
+    "attempt_number": 1,
+    "panel_count": 160,
+    "panel_bunching": 1.0,
+    "te_le_density_ratio": 0.15,
+    "refined_le_density_ratio": 0.2,
+    "top_refinement": [
+      1.0,
+      1.0
+    ],
+    "bottom_refinement": [
+      1.0,
+      1.0
+    ],
+    "reynolds": 1000000.0,
+    "mach": 0.1,
+    "flow_type": 1,
+    "ncrit": 9.0,
+    "xtr": [
+      1.0,
+      1.0
+    ],
+    "target_cl": 0.5,
+    "iteration_limit": 200,
+    "timeout_seconds": 60,
+    "cl_sequence": [
+      0.5
+    ],
+    "save_cp": true
+  },
+  "files_sha256": {
+    "airfoil.dat": "bb52d98ca138e79a8ab3830d09f9c804c29d237218a4c102a034b91a4c7083d4",
+    "input.txt": "a5156e4894d1c24f150c9c6dd9101b83b0f0652fc218f91f45b151e4dce9e345",
+    "stdout.log": "ceed6c55c5aa9aff4b943091631f1051c11ccb4e4730fc3823345edc82927019",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "polar.txt": "71d272a27a09ff8eff7ee4460b76407e3030ee9058420f535bbd2cd81c2e1450",
+    "cp.txt": "e0491b4e1d671c6474de63afee588bbac1b93d13e8f852cea9a18a62675d63c3"
+  }
+}

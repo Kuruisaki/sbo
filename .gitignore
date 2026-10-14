@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+pytest-cache-files-*/
+build/
+dist/
+runs/
+tools/xfoil/
+tools/*.zip
+.venv/

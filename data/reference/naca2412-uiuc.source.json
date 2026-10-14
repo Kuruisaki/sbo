@@ -1,0 +1,8 @@
+{
+  "source": "UIUC Airfoil Coordinates Database, NACA 2412",
+  "url": "https://m-selig.ae.illinois.edu/ads/coord/naca2412.dat",
+  "retrieved_at_utc": "2026-10-13T11:25:56.650795+00:00",
+  "sha256": "dce4261b15ef4177ce80563d5980891178c8ec8cbb1e270f0708a18f28d8bf56",
+  "file": "naca2412-uiuc.dat",
+  "purpose": "Independent contour check only; not a deformation template or aerodynamic label."
+}
