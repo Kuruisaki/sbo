@@ -1,0 +1,80 @@
+commit d670b51fb0bc1089f46677e6852a055902c28dee
+Author: Kuruisaki <wanhangyuu@gmail.com>
+Date:   Wed Oct 14 22:57:01 2026 +0800
+
+    Initial commit
+
+ .gitignore                                       |  11 +
+ README.md                                        | 179 ++++++++
+ SBO_代码目录与接口设计.md                        | 347 +++++++++++++++
+ SBO_流程与部署指南.md                            | 316 +++++++++++++
+ configs/naca2412.yaml                            | 255 +++++++++++
+ data/reference/naca2412-uiuc.dat                 |  36 ++
+ data/reference/naca2412-uiuc.source.json         |   8 +
+ environment-win-64.lock.txt                      | 112 +++++
+ environment.yml                                  |  22 +
+ pyproject.toml                                   |  21 +
+ scripts/01_preflight.py                          | 233 ++++++++++
+ scripts/02_baseline.py                           |  11 +
+ scripts/03_doe.py                                |  11 +
+ scripts/04_fit.py                                |  30 ++
+ scripts/05_optimize.py                           |  45 ++
+ scripts/06_verify.py                             |  45 ++
+ scripts/07_report.py                             |  28 ++
+ src/sbo/__init__.py                              |   3 +
+ src/sbo/acquisition.py                           | 219 +++++++++
+ src/sbo/baseline.py                              | 167 +++++++
+ src/sbo/config.py                                | 428 ++++++++++++++++++
+ src/sbo/doe.py                                   | 158 +++++++
+ src/sbo/evaluator.py                             | 385 ++++++++++++++++
+ src/sbo/fitting.py                               | 257 +++++++++++
+ src/sbo/geometry.py                              | 333 ++++++++++++++
+ src/sbo/m2_cli.py                                |  38 ++
+ src/sbo/optimizer.py                             | 421 ++++++++++++++++++
+ src/sbo/polar.py                                 | 440 ++++++++++++++++++
+ src/sbo/records.py                               |  52 +++
+ src/sbo/reporting.py                             | 275 ++++++++++++
+ src/sbo/sampling.py                              | 133 ++++++
+ src/sbo/stages.py                                |  99 +++++
+ src/sbo/store.py                                 | 366 +++++++++++++++
+ src/sbo/surrogate.py                             | 276 ++++++++++++
+ src/sbo/verification.py                          | 311 +++++++++++++
+ src/sbo/xfoil_runner.py                          | 531 ++++++++++++++++++++++
+ tests/conftest.py                                |   2 +
+ tests/fixtures/fake_xfoil_process.py             |  25 ++
+ tests/fixtures/xfoil699_baseline/airfoil.dat     | 322 ++++++++++++++
+ tests/fixtures/xfoil699_baseline/cp.txt          | 163 +++++++
+ tests/fixtures/xfoil699_baseline/input.txt       |  31 ++
+ tests/fixtures/xfoil699_baseline/polar.txt       |  13 +
+ tests/fixtures/xfoil699_baseline/source.json     |  61 +++
+ tests/fixtures/xfoil699_baseline/stderr.log      |   0
+ tests/fixtures/xfoil699_baseline/stdout.log      | 291 ++++++++++++
+ tests/fixtures/xfoil699_continuation/airfoil.dat | 322 ++++++++++++++
+ tests/fixtures/xfoil699_continuation/input.txt   |  34 ++
+ tests/fixtures/xfoil699_continuation/polar.txt   |  16 +
+ tests/fixtures/xfoil699_continuation/source.json |  49 +++
+ tests/fixtures/xfoil699_continuation/stderr.log  |   0
+ tests/fixtures/xfoil699_continuation/stdout.log  | 539 +++++++++++++++++++++++
+ tests/fixtures/xfoil699_unconverged/airfoil.dat  | 322 ++++++++++++++
+ tests/fixtures/xfoil699_unconverged/input.txt    |  30 ++
+ tests/fixtures/xfoil699_unconverged/polar.txt    |  12 +
+ tests/fixtures/xfoil699_unconverged/source.json  |  46 ++
+ tests/fixtures/xfoil699_unconverged/stderr.log   |   0
+ tests/fixtures/xfoil699_unconverged/stdout.log   | 203 +++++++++
+ tests/test_config.py                             |  58 +++
+ tests/test_evaluator.py                          | 266 +++++++++++
+ tests/test_evaluator_integration.py              |  76 ++++
+ tests/test_geometry.py                           | 199 +++++++++
+ tests/test_m2.py                                 | 310 +++++++++++++
+ tests/test_m2_integration.py                     |  67 +++
+ tests/test_m3_integration.py                     |  93 ++++
+ tests/test_m3_stage.py                           | 180 ++++++++
+ tests/test_optimizer.py                          | 307 +++++++++++++
+ tests/test_optimizer_integration.py              | 104 +++++
+ tests/test_polar.py                              | 294 +++++++++++++
+ tests/test_surrogate_acquisition.py              | 257 +++++++++++
+ tests/test_verification.py                       | 283 ++++++++++++
+ tests/test_verification_integration.py           | 111 +++++
+ tests/test_xfoil_integration.py                  | 111 +++++
+ tests/test_xfoil_runner.py                       | 196 +++++++++
+ 73 files changed, 11995 insertions(+)

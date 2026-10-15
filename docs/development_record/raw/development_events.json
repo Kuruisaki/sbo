@@ -1,0 +1,114 @@
+{
+  "kind": "Evidence-linked summaries in chapter01; not fabricated independent prompts.",
+  "count": 27,
+  "events": [
+    {
+      "id": 1,
+      "title": "先形成方案，确认采用 XFOIL"
+    },
+    {
+      "id": 2,
+      "title": "生成真实配置契约"
+    },
+    {
+      "id": 3,
+      "title": "连续几何而非四位型号取整"
+    },
+    {
+      "id": 4,
+      "title": "隔离 XFOIL 进程与会话"
+    },
+    {
+      "id": 5,
+      "title": "从真实 polar 与日志验收目标点"
+    },
+    {
+      "id": 6,
+      "title": "拒绝“返回码0但目标点未收敛”"
+    },
+    {
+      "id": 7,
+      "title": "完成 evaluator、冻结run与M1入口"
+    },
+    {
+      "id": 8,
+      "title": "原生 BLAS 依赖探针失败，切换 OpenBLAS"
+    },
+    {
+      "id": 9,
+      "title": "Windows 临时目录权限影响测试"
+    },
+    {
+      "id": 10,
+      "title": "独立基准质量关卡"
+    },
+    {
+      "id": 11,
+      "title": "LHS训练与预留留出坐标"
+    },
+    {
+      "id": 12,
+      "title": "独立store、迁移、失败替补与人工复查"
+    },
+    {
+      "id": 13,
+      "title": "DOE跨进程与硬退出恢复"
+    },
+    {
+      "id": 14,
+      "title": "17个真实点拟合 GP，逐折独立LOO"
+    },
+    {
+      "id": 15,
+      "title": "EI/探索生成未评估提议"
+    },
+    {
+      "id": 16,
+      "title": "模型身份、逐折checkpoint、重建与封存保护"
+    },
+    {
+      "id": 17,
+      "title": "实际求解推进25点、9个模型版本"
+    },
+    {
+      "id": 18,
+      "title": "按成功更新计周期探索和收敛窗口"
+    },
+    {
+      "id": 19,
+      "title": "evaluation提交但history未提交的崩溃窗口"
+    },
+    {
+      "id": 20,
+      "title": "保存阶段终止预算，修正完成阶段恢复语义"
+    },
+    {
+      "id": 21,
+      "title": "冻结最终模型/候选后解封 holdout"
+    },
+    {
+      "id": 22,
+      "title": "明确12个独立复核与数值验收"
+    },
+    {
+      "id": 23,
+      "title": "报告字段、覆盖率边界与JSON receipt修正"
+    },
+    {
+      "id": 24,
+      "title": "NumPy布尔序列化导致7项M5失败，纠正后复测"
+    },
+    {
+      "id": 25,
+      "title": "完善显式复查、最终GP和独立槽位保护"
+    },
+    {
+      "id": 26,
+      "title": "真实收益通过、恢复与最终导出"
+    },
+    {
+      "id": 27,
+      "title": "初始化Git、local作者、关联并推送首次提交"
+    }
+  ]
+}

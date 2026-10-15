@@ -1,0 +1,104 @@
+{
+  "status": {
+    "command": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "exit_code": 0,
+    "stdout": "## main...origin/main\n?? docs/\n",
+    "stderr": ""
+  },
+  "log": {
+    "command": [
+      "git",
+      "log",
+      "--oneline",
+      "--decorate",
+      "--graph",
+      "--all"
+    ],
+    "exit_code": 0,
+    "stdout": "* d670b51 (HEAD -> main, origin/main) Initial commit\n",
+    "stderr": ""
+  },
+  "diff": {
+    "command": [
+      "git",
+      "diff"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "staged": {
+    "command": [
+      "git",
+      "diff",
+      "--staged"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "branches": {
+    "command": [
+      "git",
+      "branch",
+      "-vv"
+    ],
+    "exit_code": 0,
+    "stdout": "* main d670b51 [origin/main] Initial commit\n",
+    "stderr": ""
+  },
+  "stat": {
+    "command": [
+      "git",
+      "log",
+      "--stat"
+    ],
+    "exit_code": 0,
+    "stdout": "commit d670b51fb0bc1089f46677e6852a055902c28dee\nAuthor: Kuruisaki <wanhangyuu@gmail.com>\nDate:   Wed Oct 14 22:57:01 2026 +0800\n\n    Initial commit\n\n .gitignore                                       |  11 +\n README.md                                        | 179 ++++++++\n SBO_代码目录与接口设计.md                        | 347 +++++++++++++++\n SBO_流程与部署指南.md                            | 316 +++++++++++++\n configs/naca2412.yaml                            | 255 +++++++++++\n data/reference/naca2412-uiuc.dat                 |  36 ++\n data/reference/naca2412-uiuc.source.json         |   8 +\n environment-win-64.lock.txt                      | 112 +++++\n environment.yml                                  |  22 +\n pyproject.toml                                   |  21 +\n scripts/01_preflight.py                          | 233 ++++++++++\n scripts/02_baseline.py                           |  11 +\n scripts/03_doe.py                                |  11 +\n scripts/04_fit.py                                |  30 ++\n scripts/05_optimize.py                           |  45 ++\n scripts/06_verify.py                             |  45 ++\n scripts/07_report.py                             |  28 ++\n src/sbo/__init__.py                              |   3 +\n src/sbo/acquisition.py                           | 219 +++++++++\n src/sbo/baseline.py                              | 167 +++++++\n src/sbo/config.py                                | 428 ++++++++++++++++++\n src/sbo/doe.py                                   | 158 +++++++\n src/sbo/evaluator.py                             | 385 ++++++++++++++++\n src/sbo/fitting.py                               | 257 +++++++++++\n src/sbo/geometry.py                              | 333 ++++++++++++++\n src/sbo/m2_cli.py                                |  38 ++\n src/sbo/optimizer.py                             | 421 ++++++++++++++++++\n src/sbo/polar.py                                 | 440 ++++++++++++++++++\n src/sbo/records.py                               |  52 +++\n src/sbo/reporting.py                             | 275 ++++++++++++\n src/sbo/sampling.py                              | 133 ++++++\n src/sbo/stages.py                                |  99 +++++\n src/sbo/store.py                                 | 366 +++++++++++++++\n src/sbo/surrogate.py                             | 276 ++++++++++++\n src/sbo/verification.py                          | 311 +++++++++++++\n src/sbo/xfoil_runner.py                          | 531 ++++++++++++++++++++++\n tests/conftest.py                                |   2 +\n tests/fixtures/fake_xfoil_process.py             |  25 ++\n tests/fixtures/xfoil699_baseline/airfoil.dat     | 322 ++++++++++++++\n tests/fixtures/xfoil699_baseline/cp.txt          | 163 +++++++\n tests/fixtures/xfoil699_baseline/input.txt       |  31 ++\n tests/fixtures/xfoil699_baseline/polar.txt       |  13 +\n tests/fixtures/xfoil699_baseline/source.json     |  61 +++\n tests/fixtures/xfoil699_baseline/stderr.log      |   0\n tests/fixtures/xfoil699_baseline/stdout.log      | 291 ++++++++++++\n tests/fixtures/xfoil699_continuation/airfoil.dat | 322 ++++++++++++++\n tests/fixtures/xfoil699_continuation/input.txt   |  34 ++\n tests/fixtures/xfoil699_continuation/polar.txt   |  16 +\n tests/fixtures/xfoil699_continuation/source.json |  49 +++\n tests/fixtures/xfoil699_continuation/stderr.log  |   0\n tests/fixtures/xfoil699_continuation/stdout.log  | 539 +++++++++++++++++++++++\n tests/fixtures/xfoil699_unconverged/airfoil.dat  | 322 ++++++++++++++\n tests/fixtures/xfoil699_unconverged/input.txt    |  30 ++\n tests/fixtures/xfoil699_unconverged/polar.txt    |  12 +\n tests/fixtures/xfoil699_unconverged/source.json  |  46 ++\n tests/fixtures/xfoil699_unconverged/stderr.log   |   0\n tests/fixtures/xfoil699_unconverged/stdout.log   | 203 +++++++++\n tests/test_config.py                             |  58 +++\n tests/test_evaluator.py                          | 266 +++++++++++\n tests/test_evaluator_integration.py              |  76 ++++\n tests/test_geometry.py                           | 199 +++++++++\n tests/test_m2.py                                 | 310 +++++++++++++\n tests/test_m2_integration.py                     |  67 +++\n tests/test_m3_integration.py                     |  93 ++++\n tests/test_m3_stage.py                           | 180 ++++++++\n tests/test_optimizer.py                          | 307 +++++++++++++\n tests/test_optimizer_integration.py              | 104 +++++\n tests/test_polar.py                              | 294 +++++++++++++\n tests/test_surrogate_acquisition.py              | 257 +++++++++++\n tests/test_verification.py                       | 283 ++++++++++++\n tests/test_verification_integration.py           | 111 +++++\n tests/test_xfoil_integration.py                  | 111 +++++\n tests/test_xfoil_runner.py                       | 196 +++++++++\n 73 files changed, 11995 insertions(+)\n",
+    "stderr": ""
+  },
+  "names": {
+    "command": [
+      "git",
+      "log",
+      "--name-status"
+    ],
+    "exit_code": 0,
+    "stdout": "commit d670b51fb0bc1089f46677e6852a055902c28dee\nAuthor: Kuruisaki <wanhangyuu@gmail.com>\nDate:   Wed Oct 14 22:57:01 2026 +0800\n\n    Initial commit\n\nA\t.gitignore\nA\tREADME.md\nA\tSBO_代码目录与接口设计.md\nA\tSBO_流程与部署指南.md\nA\tconfigs/naca2412.yaml\nA\tdata/reference/naca2412-uiuc.dat\nA\tdata/reference/naca2412-uiuc.source.json\nA\tenvironment-win-64.lock.txt\nA\tenvironment.yml\nA\tpyproject.toml\nA\tscripts/01_preflight.py\nA\tscripts/02_baseline.py\nA\tscripts/03_doe.py\nA\tscripts/04_fit.py\nA\tscripts/05_optimize.py\nA\tscripts/06_verify.py\nA\tscripts/07_report.py\nA\tsrc/sbo/__init__.py\nA\tsrc/sbo/acquisition.py\nA\tsrc/sbo/baseline.py\nA\tsrc/sbo/config.py\nA\tsrc/sbo/doe.py\nA\tsrc/sbo/evaluator.py\nA\tsrc/sbo/fitting.py\nA\tsrc/sbo/geometry.py\nA\tsrc/sbo/m2_cli.py\nA\tsrc/sbo/optimizer.py\nA\tsrc/sbo/polar.py\nA\tsrc/sbo/records.py\nA\tsrc/sbo/reporting.py\nA\tsrc/sbo/sampling.py\nA\tsrc/sbo/stages.py\nA\tsrc/sbo/store.py\nA\tsrc/sbo/surrogate.py\nA\tsrc/sbo/verification.py\nA\tsrc/sbo/xfoil_runner.py\nA\ttests/conftest.py\nA\ttests/fixtures/fake_xfoil_process.py\nA\ttests/fixtures/xfoil699_baseline/airfoil.dat\nA\ttests/fixtures/xfoil699_baseline/cp.txt\nA\ttests/fixtures/xfoil699_baseline/input.txt\nA\ttests/fixtures/xfoil699_baseline/polar.txt\nA\ttests/fixtures/xfoil699_baseline/source.json\nA\ttests/fixtures/xfoil699_baseline/stderr.log\nA\ttests/fixtures/xfoil699_baseline/stdout.log\nA\ttests/fixtures/xfoil699_continuation/airfoil.dat\nA\ttests/fixtures/xfoil699_continuation/input.txt\nA\ttests/fixtures/xfoil699_continuation/polar.txt\nA\ttests/fixtures/xfoil699_continuation/source.json\nA\ttests/fixtures/xfoil699_continuation/stderr.log\nA\ttests/fixtures/xfoil699_continuation/stdout.log\nA\ttests/fixtures/xfoil699_unconverged/airfoil.dat\nA\ttests/fixtures/xfoil699_unconverged/input.txt\nA\ttests/fixtures/xfoil699_unconverged/polar.txt\nA\ttests/fixtures/xfoil699_unconverged/source.json\nA\ttests/fixtures/xfoil699_unconverged/stderr.log\nA\ttests/fixtures/xfoil699_unconverged/stdout.log\nA\ttests/test_config.py\nA\ttests/test_evaluator.py\nA\ttests/test_evaluator_integration.py\nA\ttests/test_geometry.py\nA\ttests/test_m2.py\nA\ttests/test_m2_integration.py\nA\ttests/test_m3_integration.py\nA\ttests/test_m3_stage.py\nA\ttests/test_optimizer.py\nA\ttests/test_optimizer_integration.py\nA\ttests/test_polar.py\nA\ttests/test_surrogate_acquisition.py\nA\ttests/test_verification.py\nA\ttests/test_verification_integration.py\nA\ttests/test_xfoil_integration.py\nA\ttests/test_xfoil_runner.py\n",
+    "stderr": ""
+  },
+  "remote": {
+    "command": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "origin\thttps://github.com/Kuruisaki/sbo.git (fetch)\norigin\thttps://github.com/Kuruisaki/sbo.git (push)\n",
+    "stderr": ""
+  },
+  "head": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "d670b51fb0bc1089f46677e6852a055902c28dee\n",
+    "stderr": ""
+  },
+  "tracked": {
+    "command": [
+      "git",
+      "ls-files"
+    ],
+    "exit_code": 0,
+    "stdout": ".gitignore\nREADME.md\nSBO_代码目录与接口设计.md\nSBO_流程与部署指南.md\nconfigs/naca2412.yaml\ndata/reference/naca2412-uiuc.dat\ndata/reference/naca2412-uiuc.source.json\nenvironment-win-64.lock.txt\nenvironment.yml\npyproject.toml\nscripts/01_preflight.py\nscripts/02_baseline.py\nscripts/03_doe.py\nscripts/04_fit.py\nscripts/05_optimize.py\nscripts/06_verify.py\nscripts/07_report.py\nsrc/sbo/__init__.py\nsrc/sbo/acquisition.py\nsrc/sbo/baseline.py\nsrc/sbo/config.py\nsrc/sbo/doe.py\nsrc/sbo/evaluator.py\nsrc/sbo/fitting.py\nsrc/sbo/geometry.py\nsrc/sbo/m2_cli.py\nsrc/sbo/optimizer.py\nsrc/sbo/polar.py\nsrc/sbo/records.py\nsrc/sbo/reporting.py\nsrc/sbo/sampling.py\nsrc/sbo/stages.py\nsrc/sbo/store.py\nsrc/sbo/surrogate.py\nsrc/sbo/verification.py\nsrc/sbo/xfoil_runner.py\ntests/conftest.py\ntests/fixtures/fake_xfoil_process.py\ntests/fixtures/xfoil699_baseline/airfoil.dat\ntests/fixtures/xfoil699_baseline/cp.txt\ntests/fixtures/xfoil699_baseline/input.txt\ntests/fixtures/xfoil699_baseline/polar.txt\ntests/fixtures/xfoil699_baseline/source.json\ntests/fixtures/xfoil699_baseline/stderr.log\ntests/fixtures/xfoil699_baseline/stdout.log\ntests/fixtures/xfoil699_continuation/airfoil.dat\ntests/fixtures/xfoil699_continuation/input.txt\ntests/fixtures/xfoil699_continuation/polar.txt\ntests/fixtures/xfoil699_continuation/source.json\ntests/fixtures/xfoil699_continuation/stderr.log\ntests/fixtures/xfoil699_continuation/stdout.log\ntests/fixtures/xfoil699_unconverged/airfoil.dat\ntests/fixtures/xfoil699_unconverged/input.txt\ntests/fixtures/xfoil699_unconverged/polar.txt\ntests/fixtures/xfoil699_unconverged/source.json\ntests/fixtures/xfoil699_unconverged/stderr.log\ntests/fixtures/xfoil699_unconverged/stdout.log\ntests/test_config.py\ntests/test_evaluator.py\ntests/test_evaluator_integration.py\ntests/test_geometry.py\ntests/test_m2.py\ntests/test_m2_integration.py\ntests/test_m3_integration.py\ntests/test_m3_stage.py\ntests/test_optimizer.py\ntests/test_optimizer_integration.py\ntests/test_polar.py\ntests/test_surrogate_acquisition.py\ntests/test_verification.py\ntests/test_verification_integration.py\ntests/test_xfoil_integration.py\ntests/test_xfoil_runner.py\n",
+    "stderr": ""
+  }
+}

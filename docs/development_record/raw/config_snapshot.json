@@ -1,0 +1,341 @@
+{
+  "path": "configs/naca2412.yaml",
+  "file_sha256": "f82f92dbd036937d241b79a9f40db8e91ff008ce27b473cfd1315b42ae4a0fca",
+  "config": {
+    "design": {
+      "variables": [
+        "m",
+        "p"
+      ],
+      "bounds": [
+        [
+          0.01,
+          0.04
+        ],
+        [
+          0.25,
+          0.6
+        ]
+      ],
+      "baseline": [
+        0.02,
+        0.4
+      ],
+      "t": 0.12,
+      "objective": "cd",
+      "direction": "minimize",
+      "continuous_parameters": true
+    },
+    "geometry": {
+      "family": "naca4",
+      "generator_version": "naca4-analytic-v1",
+      "chord": 1.0,
+      "points_per_side": 161,
+      "spacing": "cosine",
+      "trailing_edge_coefficient": -0.1015,
+      "surface_offset": "camber_normal",
+      "derivative": "analytic",
+      "point_order": "upper_te_le_lower_te",
+      "merge_leading_edge": true,
+      "merge_trailing_edge": false,
+      "normalize_coordinates": false,
+      "clip_x_coordinates": false,
+      "name_template": "NACA4_m{m:.10f}_p{p:.10f}_t{t:.10f}",
+      "checks": [
+        "finite_coordinates",
+        "adjacent_duplicates",
+        "self_intersection",
+        "continuity"
+      ]
+    },
+    "flow": {
+      "reynolds": 1000000.0,
+      "mach": 0.1,
+      "target_cl": 0.5,
+      "type": 1,
+      "ncrit": 9.0,
+      "xtr": [
+        1.0,
+        1.0
+      ],
+      "cl_tolerance": 0.001,
+      "viscous": true
+    },
+    "xfoil": {
+      "executable": "D:\\codex\\sbo\\tools\\xfoil\\xfoil.exe",
+      "expected_version": "6.99",
+      "evaluation_policy_version": "xfoil-cl-v1",
+      "disable_graphics": true,
+      "standard_n": 160,
+      "ppar": {
+        "p": 1.0,
+        "t": 0.15,
+        "r": 0.2,
+        "xt": [
+          1.0,
+          1.0
+        ],
+        "xb": [
+          1.0,
+          1.0
+        ]
+      },
+      "max_attempts": 2,
+      "initial_attempt": {
+        "iteration_limit": 200,
+        "timeout_seconds": 60,
+        "cl_sequence": [
+          0.5
+        ]
+      },
+      "retry_attempt": {
+        "iteration_limit": 400,
+        "timeout_seconds": 120,
+        "cl_sequence": [
+          0.2,
+          0.3,
+          0.4,
+          0.5
+        ]
+      },
+      "fresh_process_per_attempt": true,
+      "fresh_directory_per_attempt": true,
+      "kill_process_tree_on_timeout": true,
+      "accept_only_target_cl": true,
+      "require_normal_exit": true,
+      "require_target_convergence": true,
+      "required_finite_columns": [
+        "alpha_deg",
+        "cl",
+        "cd",
+        "cm"
+      ],
+      "require_positive_cd": true
+    },
+    "doe": {
+      "method": "latin_hypercube",
+      "initial_points": 16,
+      "include_baseline": true,
+      "seed": 42,
+      "holdout_points": 6,
+      "holdout_seed": 2026,
+      "min_normalized_distance": 0.001,
+      "replacement_method": "maximin",
+      "reserve_holdout_coordinates": true,
+      "seal_holdout_labels_until_final_verification": true,
+      "reuse_accepted_preflight_baseline": true
+    },
+    "gp": {
+      "model": "gaussian_process_regressor",
+      "input_normalization": "fixed_design_bounds",
+      "kernel": "constant_times_matern",
+      "matern_nu": 2.5,
+      "ard": true,
+      "length_scale_initial": [
+        0.3,
+        0.3
+      ],
+      "length_scale_bounds": [
+        0.05,
+        5.0
+      ],
+      "constant_value_initial": 1.0,
+      "constant_value_bounds": [
+        0.01,
+        100.0
+      ],
+      "normalize_y": true,
+      "alpha_regularization": 1e-06,
+      "alpha_regularization_max": 0.0001,
+      "alpha_regularization_schedule": [
+        1e-06,
+        1e-05,
+        0.0001
+      ],
+      "n_restarts_optimizer": 5,
+      "seed": 43,
+      "white_kernel": false,
+      "prediction_scale": "original_cd",
+      "loo_refit_each_fold": true,
+      "record_fit_warnings": true
+    },
+    "acquisition": {
+      "method": "expected_improvement",
+      "xi": 1e-05,
+      "sobol_pool_size": 4096,
+      "sobol_scramble": true,
+      "supplement_boundaries": true,
+      "include_corners": true,
+      "boundary_points_per_edge": 65,
+      "optimizer": "differential_evolution",
+      "seed_base": 1000,
+      "iteration_start": 1,
+      "sobol_seed_policy": "iteration_seed",
+      "compare_optimizer_with_pool": true,
+      "min_normalized_distance": 0.001,
+      "exclude": [
+        "successful",
+        "failed",
+        "reserved_holdout",
+        "running"
+      ],
+      "exploration_every_successful_points": 4,
+      "exploration_method": "maximin_distance_to_training",
+      "exploration_on_poor_loo": true,
+      "fallback_on": [
+        "invalid_ei",
+        "degenerate_ei",
+        "duplicate_proposal"
+      ],
+      "sigma_zero_threshold": 1e-12,
+      "sigma_zero_policy": "positive_part_of_improvement"
+    },
+    "budget": {
+      "max_successful_sequential_points": 12,
+      "max_planned_valid_standard_designs": 35,
+      "max_distinct_standard_designs": 45,
+      "max_process_launches": 120,
+      "reserved_final_verification_launches": 12,
+      "check_before_every_launch": true,
+      "protect_verification_reserve": true
+    },
+    "stopping": {
+      "convergence": {
+        "min_successful_sequential_points": 8,
+        "successful_points_window": 5,
+        "max_best_cd_improvement": 2e-05,
+        "max_pool_ei": 1e-05,
+        "combine_conditions": "all",
+        "improvement_comparison": "less_than_or_equal",
+        "ei_comparison": "less_than"
+      },
+      "max_consecutive_failed_designs": 3,
+      "failure_rate_window": 10,
+      "max_failure_rate": 0.2,
+      "failure_rate_comparison": "greater_than",
+      "require_full_failure_rate_window": true,
+      "failure_count_policy": "final_design_outcome_after_retry",
+      "stop_on_budget_exhaustion": true
+    },
+    "quality": {
+      "baseline": {
+        "panel_counts": [
+          160,
+          200,
+          240
+        ],
+        "repeat_n": 160,
+        "max_repeat_cd_difference": 1e-05,
+        "require_all_target_points_valid": true,
+        "require_geometry_transition_cp_review": true
+      },
+      "panel_convergence": {
+        "compare_n": [
+          200,
+          240
+        ],
+        "absolute_cd_threshold": 2e-05,
+        "relative_cd_threshold": 0.01,
+        "threshold_combination": "max",
+        "relative_reference_n": 240
+      },
+      "loo": {
+        "metric": "mae",
+        "absolute_cd_threshold": 5e-05,
+        "relative_baseline_cd_threshold": 0.05,
+        "threshold_combination": "max",
+        "baseline_reference_n": 160,
+        "on_exceedance": "explore_next_iteration"
+      },
+      "holdout": {
+        "metric": "mae",
+        "absolute_cd_threshold": 5e-05,
+        "relative_baseline_cd_threshold": 0.05,
+        "threshold_combination": "max",
+        "baseline_reference_n": 160,
+        "on_exceedance": "report_surrogate_quality_failure",
+        "use_for_training_or_candidate_selection": false
+      },
+      "manual_review": {
+        "abs_alpha_deg_above": 8.0,
+        "cd_above": 0.05,
+        "status": "needs_review",
+        "exclude_from_training_until_accepted": true
+      }
+    },
+    "verification": {
+      "candidate_count": 2,
+      "candidates_from": "successful_nonbaseline_training_designs",
+      "preliminary_rank_by": "standard_cd",
+      "include_baseline": true,
+      "panel_counts": [
+        160,
+        200,
+        240
+      ],
+      "repeat_n": 200,
+      "bypass_cache": true,
+      "save_cp": true,
+      "save_transition_locations": true,
+      "require_all_target_points_valid": true,
+      "apply_panel_convergence_quality_gate": true,
+      "max_repeat_cd_difference": 1e-05,
+      "numerical_uncertainty_floor": 1e-05,
+      "numerical_uncertainty_components": [
+        "abs_cd_160_minus_200",
+        "abs_cd_200_minus_240",
+        "abs_cd_200_repeat_difference"
+      ],
+      "uncertainty_combination": "max",
+      "final_rank_n": 240,
+      "certify_improvement_above": "sum_of_baseline_and_candidate_uncertainties",
+      "report_standard_n_improvement": true,
+      "recommendation_without_certified_improvement": "baseline",
+      "recommendation_on_baseline_verification_failure": "none",
+      "allow_verification_data_in_training": false,
+      "holdout_metrics": [
+        "mae",
+        "rmse",
+        "max_absolute_error",
+        "r2",
+        "two_sigma_coverage"
+      ],
+      "holdout_interval_sigma": 2.0
+    },
+    "runtime": {
+      "config_version": "1.0",
+      "project_root": "D:\\codex\\sbo",
+      "runs_root": "D:\\codex\\sbo\\runs",
+      "reference_root": "D:\\codex\\sbo\\data\\reference",
+      "execution": "serial",
+      "workers": 1,
+      "log_level": "INFO",
+      "reject_unknown_fields": true,
+      "reject_missing_required_fields": true,
+      "freeze_config_at_run_creation": true,
+      "subsequent_stages_read_frozen_config": true,
+      "verify_frozen_config_hash": true,
+      "overwrite_existing_run": false,
+      "resume_budget_source": "database",
+      "persist_random_state": true,
+      "budget_counting": {
+        "cache_hit_counts_as_launch": false,
+        "retry_counts_as_new_design": false,
+        "retry_counts_as_launch": true,
+        "verification_counts_as_standard_design": false,
+        "verification_counts_as_launch": true,
+        "preflight_counts_as_launch": true
+      },
+      "needs_review": {
+        "action": "save_and_stop",
+        "exit_nonzero": true,
+        "require_explicit_decision_event": true,
+        "allowed_decisions": [
+          "accept",
+          "reject"
+        ],
+        "auto_accept": false
+      }
+    }
+  }
+}

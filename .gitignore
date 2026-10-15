@@ -9,3 +9,8 @@ runs/
 tools/xfoil/
 tools/*.zip
 .venv/
+
+# Workstation-specific development archive metadata (keep locally).
+/docs/development_record/raw/local_history_sources.json
+/docs/development_record/raw/powershell_project_history.json
+/docs/development_record/raw/terminal_recovery.txt

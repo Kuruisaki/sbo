@@ -1,0 +1,259 @@
+Kuruisaki/sbo — local snapshot; Git HEAD d670b51
+Maximum depth 5; .git, pycache, environment/build caches and large run raw files folded.
+
+configs/
+  naca2412.yaml
+data/
+  reference/
+    naca2412-uiuc.dat
+    naca2412-uiuc.source.json
+docs/
+  development_record/
+    raw/
+      baseline_integrity.json
+      capture_evidence.py
+      check_archive.py
+      codex_conversation.json
+      command_history.json
+      config_snapshot.json
+      consistency_check.json
+      development_events.json
+      execution_log.jsonl
+      git_branches.txt
+      git_commands.json
+      git_diff.patch
+      git_log.txt
+      git_log_name_status.txt
+      git_log_stat.txt
+      git_remote.txt
+      git_status.txt
+      git_status_before_archive.txt
+      history_recovery_notes.md
+      local_history_sources.json
+      powershell_project_history.json
+      run_evidence.json
+      run_inventory.json
+      source_inventory.json
+      terminal_recovery.txt
+    01_项目开发流程.md
+    02_软件架构.md
+    03_实际执行流程.md
+    04_SBO数学流程.md
+    05_各文件功能.md
+    project_tree.txt
+    README.md
+pytest-cache-files-djlfpxww/ [retained test cache; not expanded]
+pytest-cache-files-lnfti3xy/ [retained test cache; not expanded]
+runs/ [ignored by Git; 36 existing directories]
+  m1_20261013_01/
+    preflight.json / environment-probe logs [failed environment gate; 0 solver launches]
+  m1_20261013_02/
+    05-acceptance.stderr.log
+    05-acceptance.stdout.log
+    06-acceptance.stderr.log
+    06-acceptance.stdout.log
+    07-acceptance.stderr.log
+    07-acceptance.stdout.log
+    baseline.json
+    baseline.md
+    baseline.png
+    best-so-far.png
+    best_airfoil.dat
+    best_airfoil.json
+    checkpoint.json
+    config.frozen.yaml
+    datasets.json
+    doe-plan.json
+    doe.json
+    doe.md
+    doe.png
+    environment-export.stderr.log
+    environment-export.stdout.log
+    environment-probe.stderr.log
+    environment-probe.stdout.log
+    environment-win-64.lock.txt
+    environment.json
+    failures.csv
+    fit.json
+    fit.md
+    history.csv
+    holdout-predictions.csv
+    holdout.csv
+    m2-final-tests.xml
+    m2-test-summary.json
+    m2-tests.xml
+    m3-final-tests.xml
+    m3-recovery-validation.json
+    m3-test-summary.json
+    m3-tests.xml
+    m4-final-tests.xml
+    m4-recovery-validation.json
+    m4-test-summary.json
+    m4-tests.xml
+    m5-after-four.json
+    m5-before.json
+    m5-final-tests.xml
+    m5-first-cli.stderr.log
+    m5-first-cli.stdout.log
+    m5-freeze-tests.xml
+    m5-integration-tests.xml
+    m5-recovery-validation.json
+    m5-report-cli.stderr.log
+    m5-report-cli.stdout.log
+    m5-resume-cli.stderr.log
+    m5-resume-cli.stdout.log
+    m5-slot-tests.xml
+    m5-test-summary.json
+    m5-tests.xml
+    m5-unit-tests.xml
+    m5_acceptance.py
+    m5_test_summary.py
+    manifest.json
+    optimization.json
+    optimization.md
+    preflight.json
+    preflight.md
+    recovery-validation.json
+    report.json
+    report.md
+    report.png
+    samples.csv
+    samples.sqlite
+    test-summary.json
+    verification.csv
+    verification.json
+    verification.png
+    evaluations/ [51 eval directories; raw files folded]
+      eval_<UUID>/result.json
+        attempt_1/ [airfoil.dat, input.txt, stdout.log, stderr.log, polar.txt, optional cp.txt, process.json, result.json]
+    models/ [9 models]
+      iter_000/ [gp.joblib, metadata.json, training.json/csv, loo.json/csv/png, proposal.json]
+      iter_001..008/ [gp.joblib, metadata.json, training.json/csv, loo.json/csv/png; recovery folded if present]
+    proposals/ [iter_001.json..iter_008.json; fixed pending/eval identities]
+    reports/best_airfoil.dat
+    reports/best_airfoil.json
+    reports/figures/
+    reports/figures/report.png
+    reports/figures/verification.png
+    reports/final_comparison.csv
+    reports/metrics.json
+    reports/summary.md
+  evaluator-integration-20261013-213445-f2486373/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261013-222235-4b4347ab/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261013-222513-cb0bf010/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261013-222833-4ef224bb/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261013-223118-7b5b0684/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261013-231816-ff909891/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261013-232107-2cd62fc7/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261014-182437-33e4620a/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261014-182713-49506014/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261014-210803-892d5b2a/ [validation/integration contents folded; see raw/run_inventory.json]
+  evaluator-integration-20261014-211039-15578183/ [validation/integration contents folded; see raw/run_inventory.json]
+  m3-real-validation-20261013-232118-fe0fbb/ [validation/integration contents folded; see raw/run_inventory.json]
+  m3-real-validation-20261013-232139-f0b5dd/ [validation/integration contents folded; see raw/run_inventory.json]
+  m3-real-validation-20261014-182723-e88d42/ [validation/integration contents folded; see raw/run_inventory.json]
+  m3-real-validation-20261014-211047-cad119/ [validation/integration contents folded; see raw/run_inventory.json]
+  m4-real-validation-20261014-181700-191c5b/ [validation/integration contents folded; see raw/run_inventory.json]
+  m4-real-validation-20261014-183236-d1752a/ [validation/integration contents folded; see raw/run_inventory.json]
+  m4-real-validation-20261014-184441-6dc82b/ [validation/integration contents folded; see raw/run_inventory.json]
+  m4-real-validation-20261014-211613-7db9d0/ [validation/integration contents folded; see raw/run_inventory.json]
+  m5-real-validation-20261014-205459-767486/ [validation/integration contents folded; see raw/run_inventory.json]
+  m5-real-validation-20261014-205752-4ffadc/ [validation/integration contents folded; see raw/run_inventory.json]
+  m5-real-validation-20261014-212057-66ad59/ [validation/integration contents folded; see raw/run_inventory.json]
+  m5-real-validation-20261014-212427-9d3068/ [validation/integration contents folded; see raw/run_inventory.json]
+  m5-real-validation-20261014-212716-c783d0/ [validation/integration contents folded; see raw/run_inventory.json]
+  polar-validation-20261013-204059/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261013-201101-29eec33d/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261013-201151-9e378da8/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261013-204639-1afad5ea/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261013-213455-0a9ab772/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261013-222524-18f35dc6/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261013-232231-548d5947/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261014-183301-f1c91de9/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-integration-20261014-212124-7c4c4169/ [validation/integration contents folded; see raw/run_inventory.json]
+  xfoil-runner-validation-20261013-200543/ [validation/integration contents folded; see raw/run_inventory.json]
+scripts/
+  01_preflight.py
+  02_baseline.py
+  03_doe.py
+  04_fit.py
+  05_optimize.py
+  06_verify.py
+  07_report.py
+src/
+  sbo/
+    __init__.py
+    acquisition.py
+    baseline.py
+    config.py
+    doe.py
+    evaluator.py
+    fitting.py
+    geometry.py
+    m2_cli.py
+    optimizer.py
+    polar.py
+    records.py
+    reporting.py
+    sampling.py
+    stages.py
+    store.py
+    surrogate.py
+    verification.py
+    xfoil_runner.py
+tests/
+  fixtures/
+    xfoil699_baseline/
+      airfoil.dat
+      cp.txt
+      input.txt
+      polar.txt
+      source.json
+      stderr.log
+      stdout.log
+    xfoil699_continuation/
+      airfoil.dat
+      input.txt
+      polar.txt
+      source.json
+      stderr.log
+      stdout.log
+    xfoil699_unconverged/
+      airfoil.dat
+      input.txt
+      polar.txt
+      source.json
+      stderr.log
+      stdout.log
+    fake_xfoil_process.py
+  conftest.py
+  test_config.py
+  test_evaluator.py
+  test_evaluator_integration.py
+  test_geometry.py
+  test_m2.py
+  test_m2_integration.py
+  test_m3_integration.py
+  test_m3_stage.py
+  test_optimizer.py
+  test_optimizer_integration.py
+  test_polar.py
+  test_surrogate_acquisition.py
+  test_verification.py
+  test_verification_integration.py
+  test_xfoil_integration.py
+  test_xfoil_runner.py
+tools/
+  xfoil/
+    pplot.exe
+    pxplot.exe
+    xfoil.exe
+    Xfoil699src.zip
+  XFOIL6.99.zip
+.gitignore
+environment-win-64.lock.txt
+environment.yml
+pyproject.toml
+README.md
+SBO_代码目录与接口设计.md
+SBO_流程与部署指南.md

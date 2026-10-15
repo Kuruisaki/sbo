@@ -1,0 +1,329 @@
+{
+  "checked_at_utc": "2026-10-14T17:43:05.746800+00:00",
+  "status": "success",
+  "checks": {
+    "required_documents": {
+      "passed": true,
+      "detail": [
+        "README.md",
+        "01_项目开发流程.md",
+        "02_软件架构.md",
+        "03_实际执行流程.md",
+        "04_SBO数学流程.md",
+        "05_各文件功能.md",
+        "project_tree.txt"
+      ]
+    },
+    "required_raw_git": {
+      "passed": true,
+      "detail": null
+    },
+    "local_links_resolve": {
+      "passed": true,
+      "detail": []
+    },
+    "yaml_sections_and_leaves": {
+      "passed": true,
+      "detail": {
+        "sections": [
+          "design",
+          "geometry",
+          "flow",
+          "xfoil",
+          "doe",
+          "gp",
+          "acquisition",
+          "budget",
+          "stopping",
+          "quality",
+          "verification",
+          "runtime"
+        ],
+        "leaves": 202
+      }
+    },
+    "source_config_equals_main_frozen_values": {
+      "passed": true,
+      "detail": null
+    },
+    "documented_default_design": {
+      "passed": true,
+      "detail": null
+    },
+    "documented_physics": {
+      "passed": true,
+      "detail": null
+    },
+    "documented_doe_and_gp": {
+      "passed": true,
+      "detail": null
+    },
+    "documented_ei_stopping_verification": {
+      "passed": true,
+      "detail": null
+    },
+    "core_module_catalogue": {
+      "passed": true,
+      "detail": null
+    },
+    "catalogue_symbols_exist_in_actual_ast": {
+      "passed": true,
+      "detail": []
+    },
+    "ast_sources_not_changed": {
+      "passed": true,
+      "detail": null
+    },
+    "all_seven_entry_points": {
+      "passed": true,
+      "detail": {
+        "src/sbo/m2_cli.py": [
+          "parser.add_argument('--run-id', required=True)",
+          "parser.add_argument('--resume', action='store_true')",
+          "parser.add_argument('--review-eval-id')",
+          "parser.add_argument('--review-decision', choices=('accept', 'reject'))",
+          "parser.add_argument('--review-reason')",
+          "parser.add_argument('--stop-after', type=int, help='Recovery diagnostic: stop after this many evaluation outcomes')"
+        ],
+        "scripts/01_preflight.py": [
+          "parser.add_argument('--config', type=Path, default=PROJECT / 'configs/naca2412.yaml')",
+          "parser.add_argument('--run-id')",
+          "parser.add_argument('--dependency-probe', action='store_true', help=argparse.SUPPRESS)"
+        ],
+        "scripts/02_baseline.py": [],
+        "scripts/03_doe.py": [],
+        "scripts/04_fit.py": [
+          "parser.add_argument('--run-id', required=True)",
+          "parser.add_argument('--resume', action='store_true')",
+          "parser.add_argument('--stop-after-folds', type=int, help='Recovery diagnostic: stop after N newly completed LOO folds')"
+        ],
+        "scripts/05_optimize.py": [
+          "parser.add_argument('--run-id', required=True)",
+          "parser.add_argument('--resume', action='store_true')",
+          "parser.add_argument('--stop-after-evaluations', type=int, help='Recovery diagnostic: stop after N outcomes and model update')",
+          "parser.add_argument('--review-eval-id')",
+          "parser.add_argument('--review-decision', choices=('accept', 'reject'))",
+          "parser.add_argument('--review-reason')"
+        ],
+        "scripts/06_verify.py": [
+          "parser.add_argument('--run-id', required=True)",
+          "parser.add_argument('--resume', action='store_true')",
+          "parser.add_argument('--stop-after-evaluations', type=int, help='Explicit recovery diagnostic boundary')",
+          "parser.add_argument('--review-eval-id')",
+          "parser.add_argument('--review-decision', choices=('accept', 'reject'))",
+          "parser.add_argument('--review-reason')"
+        ],
+        "scripts/07_report.py": [
+          "parser.add_argument('--run-id', required=True)"
+        ]
+      }
+    },
+    "report_cli_only_run_id": {
+      "passed": true,
+      "detail": null
+    },
+    "no_invented_console_entry": {
+      "passed": true,
+      "detail": null
+    },
+    "ei_formula_includes_xi": {
+      "passed": true,
+      "detail": null
+    },
+    "stopping_window_uses_five_transitions": {
+      "passed": true,
+      "detail": null
+    },
+    "frozen_file_receipt": {
+      "passed": true,
+      "detail": null
+    },
+    "solver_identity_documented_without_execution": {
+      "passed": true,
+      "detail": null
+    },
+    "reference_geometry_identity": {
+      "passed": true,
+      "detail": null
+    },
+    "sqlite_main_counts": {
+      "passed": true,
+      "detail": {
+        "launches": 51,
+        "train": 25,
+        "holdout": 6,
+        "models": 9,
+        "pending": 0
+      }
+    },
+    "sqlite_all_six_stages_success": {
+      "passed": true,
+      "detail": [
+        [
+          "baseline",
+          "success"
+        ],
+        [
+          "doe",
+          "success"
+        ],
+        [
+          "fit",
+          "success"
+        ],
+        [
+          "optimize",
+          "success"
+        ],
+        [
+          "report",
+          "success"
+        ],
+        [
+          "verify",
+          "success"
+        ]
+      ]
+    },
+    "sqlite_config_identity": {
+      "passed": true,
+      "detail": null
+    },
+    "historical_budget_snapshots": {
+      "passed": true,
+      "detail": null
+    },
+    "documented_main_result": {
+      "passed": true,
+      "detail": null
+    },
+    "same_fidelity_cd": {
+      "passed": true,
+      "detail": null
+    },
+    "unique_final_slots": {
+      "passed": true,
+      "detail": null
+    },
+    "iter_000_model_and_loo": {
+      "passed": true,
+      "detail": {
+        "folds": 17,
+        "mae": 9.818229810091269e-05,
+        "rmse": 0.00014106218693489303
+      }
+    },
+    "iter_008_model_and_loo": {
+      "passed": true,
+      "detail": {
+        "folds": 25,
+        "mae": 0.00014394717725077014,
+        "rmse": 0.0002099025589143872
+      }
+    },
+    "holdout_metrics_from_saved_rows": {
+      "passed": true,
+      "detail": null
+    },
+    "reports_mirror_integrity": {
+      "passed": true,
+      "detail": null
+    },
+    "saved_test_latest_results": {
+      "passed": true,
+      "detail": {
+        "distinct": 300,
+        "integration": 12,
+        "executions": [
+          {
+            "file": "m5-tests.xml",
+            "cases": 299,
+            "failures": 7
+          },
+          {
+            "file": "m5-final-tests.xml",
+            "cases": 17,
+            "failures": 0
+          },
+          {
+            "file": "m5-freeze-tests.xml",
+            "cases": 3,
+            "failures": 0
+          },
+          {
+            "file": "m5-slot-tests.xml",
+            "cases": 2,
+            "failures": 0
+          }
+        ],
+        "rerun_now": false
+      }
+    },
+    "public_history_no_internal_reasoning": {
+      "passed": true,
+      "detail": null
+    },
+    "recovered_history_counts": {
+      "passed": true,
+      "detail": null
+    },
+    "27_development_events": {
+      "passed": true,
+      "detail": [
+        "先形成方案，确认采用 XFOIL",
+        "生成真实配置契约",
+        "连续几何而非四位型号取整",
+        "隔离 XFOIL 进程与会话",
+        "从真实 polar 与日志验收目标点",
+        "拒绝“返回码0但目标点未收敛”",
+        "完成 evaluator、冻结run与M1入口",
+        "原生 BLAS 依赖探针失败，切换 OpenBLAS",
+        "Windows 临时目录权限影响测试",
+        "独立基准质量关卡",
+        "LHS训练与预留留出坐标",
+        "独立store、迁移、失败替补与人工复查",
+        "DOE跨进程与硬退出恢复",
+        "17个真实点拟合 GP，逐折独立LOO",
+        "EI/探索生成未评估提议",
+        "模型身份、逐折checkpoint、重建与封存保护",
+        "实际求解推进25点、9个模型版本",
+        "按成功更新计周期探索和收敛窗口",
+        "evaluation提交但history未提交的崩溃窗口",
+        "保存阶段终止预算，修正完成阶段恢复语义",
+        "冻结最终模型/候选后解封 holdout",
+        "明确12个独立复核与数值验收",
+        "报告字段、覆盖率边界与JSON receipt修正",
+        "NumPy布尔序列化导致7项M5失败，纠正后复测",
+        "完善显式复查、最终GP和独立槽位保护",
+        "真实收益通过、恢复与最终导出",
+        "初始化Git、local作者、关联并推送首次提交"
+      ]
+    },
+    "all_protected_files_byte_unchanged": {
+      "passed": true,
+      "detail": {
+        "count": 642,
+        "changed": []
+      }
+    },
+    "git_head_unchanged": {
+      "passed": true,
+      "detail": null
+    },
+    "only_new_archive_uncommitted": {
+      "passed": true,
+      "detail": "## main...origin/main\n?? docs/\n"
+    }
+  },
+  "errors": [],
+  "solver_launched_during_archive": false,
+  "new_sbo_run_created": false,
+  "method": "AST + existing YAML/JSON/CSV/XML/file hashes + SQLite mode=ro; no project import, CLI, pytest, fit, install or XFOIL.",
+  "confirmed_existing_description_differences": [
+    "README calls models table reserved although actively populated",
+    "07 is zero-solver/zero-fit but writes stage/checkpoint/manifest",
+    "duplicate_proposal config label has no same-name maximin branch",
+    "completed DOE revalidation/export reads stored holdout labels within M2",
+    "historical stage report scope is not current pipeline status"
+  ]
+}
